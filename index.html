@@ -1,44 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Newsletter sign-up form with success message</title>
+
+    <link href="./dist/output.css" rel="stylesheet" />
+    <script defer src="./src/index.js"></script>
+  </head>
+  <body>
+    <main
+      class="w-screen h-screen flex justify-center items-center bg-pale-navy"
+    >
+      <div
+        class="w-9/12 p-6 pl-16 flex justify-between items-center gap-16 rounded-modal bg-white shadow-modal font-roboto"
+      >
+        <div class="">
+          <div class="flex flex-col gap-6">
+            <h1 class="sr-only">Newsletter sign-up</h1>
+            <h2 class="text-heading text-dark-navy">Stay updated!</h2>
+            <p class="text-body">
+              Join 60,000+ product managers receiving monthly updates on:
+            </p>
+            <div class="text-body">
+              <p>Product discovery and building what matters</p>
+              <p>Measuring to ensure updates are a success</p>
+              <p>And much more!</p>
+            </div>
+          </div>
+
+          <form id="form" novalidate>
+            <div>
+              <label for="email">Email address</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="email@company.com"
+              />
+              <span aria-live="polite" id="email-error"></span>
+            </div>
+            <button>Subscribe to monthly newsletter</button>
+          </form>
+        </div>
+
+        <img
+          src="./assets/images/illustration-sign-up-desktop.svg"
+          alt="Drawers"
+          loading="lazy"
+          class="w-6/12"
+        />
+      </div>
+    </main>
+
+    <!-- Success message -->
+    <!-- 
   
-  <title>Newsletter sign-up form with success message</title>
-</head>
-<body>
-
-  <main>
-    
-  </main>
-
-  <!-- Sign-up form start -->
-
-  Stay updated!
-
-  Join 60,000+ product managers receiving monthly updates on:
-
-  Product discovery and building what matters
-  Measuring to ensure updates are a success
-  And much more!
-
-  Email address
-  email@company.com
-
-  Subscribe to monthly newsletter
-
-  <!-- Sign-up form end -->
-
-  <!-- Success message start -->
-
   Thanks for subscribing!
 
   A confirmation email has been sent to ash@loremcompany.com. 
   Please open it and click the button inside to confirm your subscription.
 
-  Dismiss message
-
-  <!-- Success message end -->
-  
-</body>
+  Dismiss message 
+  --></body>
 </html>
