@@ -16,32 +16,56 @@
       <div
         class="w-9/12 p-6 pl-16 flex justify-between items-center gap-16 rounded-modal bg-white shadow-modal font-roboto"
       >
-        <div class="">
+        <div class="flex flex-col gap-10">
           <div class="flex flex-col gap-6">
             <h1 class="sr-only">Newsletter sign-up</h1>
             <h2 class="text-heading text-dark-navy">Stay updated!</h2>
             <p class="text-body">
               Join 60,000+ product managers receiving monthly updates on:
             </p>
-            <div class="text-body">
-              <p>Product discovery and building what matters</p>
-              <p>Measuring to ensure updates are a success</p>
-              <p>And much more!</p>
+            <div class="text-body flex flex-col gap-2.5">
+              <div class="flex items-start gap-5">
+                <img
+                  src="./assets/images/icon-list.svg"
+                  alt="Drawers"
+                  loading="lazy"
+                />
+                <p>Product discovery and building what matters</p>
+              </div>
+              <div class="flex items-start gap-5">
+                <img
+                  src="./assets/images/icon-list.svg"
+                  alt="Drawers"
+                  loading="lazy"
+                />
+                <p>Measuring to ensure updates are a success</p>
+              </div>
+              <div class="flex items-start gap-5">
+                <img
+                  src="./assets/images/icon-list.svg"
+                  alt="Drawers"
+                  loading="lazy"
+                />
+                <p>And much more!</p>
+              </div>
             </div>
           </div>
 
-          <form id="form" novalidate>
-            <div>
-              <label for="email">Email address</label>
+          <form id="form" class="flex flex-col gap-6" novalidate>
+            <div class="flex flex-col gap-2">
+              <label for="email" class="text-label">Email address</label>
               <input
                 id="email"
+                class="py-4 px-6 rounded-lg border border-gray border-opacity-25"
                 name="email"
                 type="email"
                 placeholder="email@company.com"
               />
               <span aria-live="polite" id="email-error"></span>
             </div>
-            <button>Subscribe to monthly newsletter</button>
+            <button class="py-4 rounded-lg text-button text-white bg-dark-navy">
+              Subscribe to monthly newsletter
+            </button>
           </form>
         </div>
 
