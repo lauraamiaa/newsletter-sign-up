@@ -563,9 +563,7 @@ video {
 
   font-display: swap;
 
-  src: url("/fonts/Roboto-Regular.ttf") format("truetype");
-
-  /* Regular Font */
+  src: url("../assets/fonts/Roboto-Regular.ttf") format("truetype");
 }
 
 @font-face {
@@ -577,9 +575,7 @@ video {
 
   font-display: swap;
 
-  src: url("/fonts/Roboto-Bold.ttf") format("truetype");
-
-  /* Bold Font */
+  src: url("../assets/fonts/Roboto-Bold.ttf") format("truetype");
 }
 
 .sr-only {
@@ -756,26 +752,27 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.placeholder\:text-body::-moz-placeholder {
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
+.hover\:bg-button-hover:hover {
+  background-image: linear-gradient(204deg, #FF6A3A 0%, #FF527B 100%);
 }
 
-.placeholder\:text-body::placeholder {
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
+.hover\:shadow-button:hover {
+  --tw-shadow: 0px 16px 32px 0px rgba(255, 97, 85, 0.50);
+  --tw-shadow-colored: 0px 16px 32px 0px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.placeholder\:text-heading::-moz-placeholder {
-  font-size: 56px;
-  line-height: 56px;
-  font-weight: 700;
+.focus\:border-dark-navy:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(36 39 66 / var(--tw-border-opacity));
 }
 
-.placeholder\:text-heading::placeholder {
-  font-size: 56px;
-  line-height: 56px;
-  font-weight: 700;
+.focus-visible\:outline-none:focus-visible {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.active\:border-dark-navy:active {
+  --tw-border-opacity: 1;
+  border-color: rgb(36 39 66 / var(--tw-border-opacity));
 }
