@@ -14,4 +14,4 @@ This project was created to enhance my skills in building interactive forms with
 - Tailwind CSS: For styling and layout using utility classes.
 
 ## Live Demo
-The project is deployed using GitHub Pages. You can view the live demo [here](https://lauraamiaa.github.io/article-preview-component/).
+The project is deployed using GitHub Pages. You can view the live demo [here](https://lauraamiaa.github.io/newsletter-sign-up/).
