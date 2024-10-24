@@ -11,15 +11,15 @@
   </head>
   <body>
     <main
-      class="w-screen h-screen flex justify-center items-center bg-pale-navy"
+      class="w-screen h-full lg:h-screen flex justify-center items-center bg-pale-navy"
     >
       <div
-        class="w-9/12 p-6 pl-16 flex justify-between items-center gap-16 rounded-modal bg-white shadow-modal font-roboto"
+        class="w-full lg:w-9/12 h-full lg:h-fit p-0 lg:p-6 lg:pl-16 flex lg:flex-row flex-col-reverse justify-end lg:justify-between items-center gap-10 lg:gap-16 rounded-none lg:rounded-modal bg-white shadow-modal font-roboto"
       >
-        <div class="flex flex-col gap-10">
+        <div class="px-6 pb-10 lg:p-0 flex flex-col gap-10">
           <div class="flex flex-col gap-6">
             <h1 class="sr-only">Newsletter sign-up</h1>
-            <h2 class="text-heading text-dark-navy">Stay updated!</h2>
+            <h2 class="text-heading-mobile lg:text-heading text-dark-navy">Stay updated!</h2>
             <p class="text-body">
               Join 60,000+ product managers receiving monthly updates on:
             </p>
@@ -72,10 +72,17 @@
         </div>
 
         <img
+          src="./assets/images/illustration-sign-up-mobile.svg"
+          alt="Drawers"
+          loading="lazy"
+          class="block lg:hidden w-full max-h-96"
+        />
+
+        <img
           src="./assets/images/illustration-sign-up-desktop.svg"
           alt="Drawers"
           loading="lazy"
-          class="w-6/12"
+          class="hidden lg:block w-6/12"
         />
       </div>
     </main>
