@@ -10,16 +10,17 @@
     <script defer src="./src/index.js"></script>
   </head>
   <body>
-    <main
-      class="w-screen h-full lg:h-screen flex justify-center items-center bg-pale-navy"
-    >
+    <main class="flex h-screen justify-center items-center bg-pale-navy">
       <div
-        class="w-full lg:w-9/12 h-full lg:h-fit p-0 lg:p-6 lg:pl-16 flex lg:flex-row flex-col-reverse justify-end lg:justify-between items-center gap-10 lg:gap-16 rounded-none lg:rounded-modal bg-white shadow-modal font-roboto"
+        id="signup-modal"
+        class="w-full lg:w-fit min-h-screen lg:min-h-fit p-0 lg:p-6 lg:pl-16 flex lg:flex-row flex-col-reverse justify-end lg:justify-between items-center gap-10 lg:gap-16 rounded-none lg:rounded-modal bg-white shadow-modal font-roboto"
       >
         <div class="px-6 pb-10 lg:p-0 flex flex-col gap-10">
           <div class="flex flex-col gap-6">
             <h1 class="sr-only">Newsletter sign-up</h1>
-            <h2 class="text-heading-mobile lg:text-heading text-dark-navy">Stay updated!</h2>
+            <h2 class="text-heading-mobile lg:text-heading text-dark-navy">
+              Stay updated!
+            </h2>
             <p class="text-body">
               Join 60,000+ product managers receiving monthly updates on:
             </p>
@@ -51,19 +52,28 @@
             </div>
           </div>
 
-          <form id="form" class="flex flex-col gap-6" novalidate>
+          <form id="signup-form" class="flex flex-col gap-6" novalidate>
             <div class="flex flex-col gap-2">
-              <label for="email" class="text-label">Email address</label>
+              <div class="flex justify-between">
+                <label for="email" class="text-label">Email address</label>
+                <span
+                  aria-live="polite"
+                  id="email-error"
+                  class="hidden text-label text-red"
+                  >Valid email required</span
+                >
+              </div>
               <input
                 id="email"
                 class="py-4 px-6 rounded-lg border border-gray border-opacity-25 focus:border-dark-navy focus-visible:outline-none"
                 name="email"
                 type="email"
                 placeholder="email@company.com"
+                required
               />
-              <span aria-live="polite" id="email-error"></span>
             </div>
             <button
+              id="submit-button"
               class="py-4 rounded-lg text-button text-white bg-dark-navy hover:bg-button-hover hover:shadow-button"
             >
               Subscribe to monthly newsletter
@@ -82,19 +92,58 @@
           src="./assets/images/illustration-sign-up-desktop.svg"
           alt="Drawers"
           loading="lazy"
-          class="hidden lg:block w-6/12"
+          class="hidden lg:block max-h-600"
         />
       </div>
+
+      <div
+        id="success-modal"
+        class="hidden w-full lg:max-w-lg h-full lg:h-fit pt-36 px-6 sm:p-16 flex flex-col gap-10 rounded-none lg:rounded-modal bg-white shadow-modal font-roboto"
+      >
+        <img
+          src="./assets/images/icon-success.svg"
+          alt="Drawers"
+          loading="lazy"
+          class="w-16 h-16"
+        />
+        <div>
+          <h2 class="mb-6 text-heading-mobile lg:text-heading text-dark-navy">
+            Thanks for subscribing!
+          </h2>
+          <p class="text-body">
+            A confirmation email has been sent to
+            <span id="subscription-email" class="font-bold"></span>. Please open
+            it and click the button inside to confirm your subscription.
+          </p>
+        </div>
+
+        <button
+          id="close-button"
+          class="absolute bottom-10 sm:static w-full max-w-button sm:max-w-full py-4 rounded-lg text-button text-white bg-dark-navy hover:bg-button-hover hover:shadow-button"
+        >
+          Dismiss message
+        </button>
+      </div>
+
+      <div id="loading-spinner" class="hidden" role="status">
+        <svg
+          aria-hidden="true"
+          class="w-20 h-20 animate-spin fill-red"
+          viewBox="0 0 100 101"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+            fill="currentColor"
+          />
+          <path
+            d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+            fill="currentFill"
+          />
+        </svg>
+        <span class="sr-only">Loading...</span>
+      </div>
     </main>
-
-    <!-- Success message -->
-    <!-- 
-  
-  Thanks for subscribing!
-
-  A confirmation email has been sent to ash@loremcompany.com. 
-  Please open it and click the button inside to confirm your subscription.
-
-  Dismiss message 
-  --></body>
+  </body>
 </html>
